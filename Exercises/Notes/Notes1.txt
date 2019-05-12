@@ -1,0 +1,27 @@
+JS keywords
+
+break case catch class const continue debugger default
+delete do else enum export extends false finally for
+function if implements import interface in instanceof let
+new package private protected public return static super
+switch this throw true try typeof var void while with yield
+
+
+A return keyword without an expression after it will cause the function to return undefined. 
+Functions that don’t have a return statement at all, similarly return undefined.
+
+JavaScript is extremely broad-minded about the number of arguments you pass to a function. 
+If you pass too many, the extra ones are ignored. 
+If you pass too few, the missing parameters get assigned the value undefined.
+
+Almost all JavaScript values have properties. The exceptions are null and undefined. 
+If you try to access a property on one of these nonvalues, you get an error.
+
+JSON looks similar to JavaScript’s way of writing arrays and objects, with a few restrictions. 
+All property names have to be surrounded by double quotes, and only simple data expressions
+are allowed—no function calls, bindings, or anything that involves actual computation.
+Comments are not allowed in JSON.
+
+Trees come up a lot in computer science. In addition to representing recursive 
+structures such as HTML documents or programs, they are often used to maintain sorted sets of data 
+because elements can usually be found or inserted more efficiently in a tree than in a flat array.

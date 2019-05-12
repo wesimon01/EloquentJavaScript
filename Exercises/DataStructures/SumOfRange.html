@@ -1,0 +1,56 @@
+﻿<!--
+    
+
+-->
+
+
+
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    
+    <div>
+    <div>
+        <p>
+        </p>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+
+    console.log(range(1, 10));
+    console.log(sum(range(1, 10)));
+
+    function range(start, end, stepsize = start < end ? 1 : -1) {
+        let result = [];
+
+        if (stepsize > 0) {
+            for (let i = start; i <= end; i += stepsize) {
+                 result.push(i);
+            }
+        }
+        else {
+            for (let i = start; i >= end; i += stepsize) {
+                 result.push(i);
+            }
+        }
+        return result;
+    };   
+
+    function sum(array) {
+        let result = 0;
+        for (let value of array) {
+            result += value;
+        }
+        return result;
+    }
+
+
+</script>

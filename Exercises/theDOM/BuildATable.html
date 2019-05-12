@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <h1>Mountains</h1>
+
+    <div id="mountains"></div>
+    <br/><br/>
+    <div id="mountains2"></div>
+</body>
+</html>
+
+<script>
+
+    const MOUNTAINS = [
+    {name: "Kilimanjaro", height: 5895, place: "Tanzania"},
+    {name: "Everest", height: 8848, place: "Nepal"},
+    {name: "Mount Fuji", height: 3776, place: "Japan"},
+    {name: "Vaalserberg", height: 323, place: "Netherlands"},
+    {name: "Denali", height: 6168, place: "United States"},
+    {name: "Popocatepetl", height: 5465, place: "Mexico"},
+    {name: "Mont Blanc", height: 4808, place: "Italy/France"}
+    ];
+    
+    function generateTable(mountains) {
+        
+        let tableNode = document.createElement("table");
+        let firstRow = document.createElement("tr");
+        tableNode.appendChild(firstRow);
+
+        let mtnEntries = Object.entries(mountains);
+        let firstMtn = mtnEntries[0];
+
+        for (let key of Object.keys(firstMtn[1])) {
+
+            let node = document.createElement("th");
+            node.textContent = key.toString();
+            firstRow.appendChild(node);
+        }
+
+        for (let mtn of mtnEntries) {
+            let newDataRow = document.createElement("tr");
+
+            for (let value of Object.values(mtn[1])) {
+                let dataCell = document.createElement("td");
+                dataCell.textContent = value;
+
+                if (typeof value == "number")
+                    dataCell.style.textAlign = "right";
+
+                newDataRow.appendChild(dataCell);
+            }
+            tableNode.appendChild(newDataRow);
+        }
+        return tableNode;
+    };
+    let table = generateTable(MOUNTAINS);
+    document.querySelector("#mountains").appendChild(table);
+
+
+    //solution from book
+    function buildTable(data) {
+        let table = document.createElement("table");
+        let fields = Object.keys(data[0])
+        let headRow = document.createElement("tr");
+
+        fields.forEach(function (field) {
+
+            let headCell = document.createElement("th");
+            headCell.textContent = field;
+            headRow.appendChild(headCell);
+        });
+        table.appendChild(headRow);
+
+        data.forEach(function (object) {
+            let row = document.createElement("tr");
+
+            fields.forEach(function (field) {
+                let cell = document.createElement("td");
+                cell.textContent = object[field];
+
+                if (typeof object[field] == "number") {
+                    cell.style.textAlign = "right";
+                }
+                row.appendChild(cell);
+            });
+            table.appendChild(row);
+        });
+        return table;
+    }
+
+    document.querySelector("#mountains2").appendChild(buildTable(MOUNTAINS));
+
+</script>

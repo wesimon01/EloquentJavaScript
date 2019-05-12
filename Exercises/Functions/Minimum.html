@@ -1,0 +1,46 @@
+﻿<!--
+
+-->
+
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        p {
+            white-space: pre;
+        }
+    </style>
+</head>
+<body>
+    <div id="min"></div>
+</body>
+</html>
+
+<script>
+    let a = 0;
+    let b = -10;
+    let minimum = document.querySelector("#min");
+    let p = document.createElement("p");
+
+    function findMin(num1, num2) {
+        if (num1 < num2)
+            return num1;
+        else
+            return num2;
+    }
+
+    p.textContent = findMin(a, b).toString();
+    minimum.append(p);
+</script>
+
+<!--
+
+    function min(a, b) {
+  if (a < b) return a;
+  else return b;
+}
+
+-->

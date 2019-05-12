@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+</body>
+</html>
+
+<script>
+
+    console.log(reverseArray(range(1, 10)));
+    console.log(reverseArrayInPlace(range(1, 10)));
+
+    function reverseArray(array) {
+        let result = [];
+        for (let i = array.length - 1; i >= 0; i--) {
+            result.push(array[i]);
+        }
+        return result;
+    }
+
+    function reverseArrayInPlace(array) {
+        for (let i = 0; i < Math.floor(array.length / 2); i++) {
+            let old = array[i];
+            array[i] = array[array.length - 1 - i];
+            array[array.length - 1 - i] = old;
+        }
+        return array;
+    }
+
+    function range(start, end, stepsize = start < end ? 1 : -1) {
+
+        let result = [];
+
+        if (stepsize > 0) {
+            for (let i = start; i <= end; i += stepsize) {
+                 result.push(i);
+            }
+        }
+        else {
+            for (let i = start; i >= end; i += stepsize) {
+                 result.push(i);
+            }
+        }
+        return result;
+    };   
+
+</script>
